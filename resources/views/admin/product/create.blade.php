@@ -1,19 +1,18 @@
 <x-app-admin>
   <div class="container mt-5">
-    <h1>Edit Product</h1>
+    <h1>Create Product</h1>
 
-    <form action="{{ route('products.update', $product->id) }}" method="POST">
+    <form action="{{ route('products.store') }}" method="POST">
       @csrf
-      @method('PUT')
 
       <div class="mb-3">
-        <label for="code" class="form-label">Product Code</label>
-        <input type="text" class="form-control" id="code" name="code" value="{{ $product->code }}" required>
+        <label for="code" class="form-label">Code</label>
+        <input type="text" class="form-control" id="code" name="code" required>
       </div>
 
       <div class="mb-3">
-        <label for="name" class="form-label">Product Name</label>
-        <input type="text" class="form-control" id="name" name="name" value="{{ $product->name }}" required>
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" required>
       </div>
 
       <div class="mb-3">
@@ -34,10 +33,10 @@
 
       <div class="mb-3">
         <label for="price" class="form-label">Price</label>
-        <input type="number" class="form-control" id="price" name="price" required>
+        <input type="number" class="form-control" id="price" name="price" value="{{ $product->price ?? '' }}" required>
       </div>
 
-      <button type="submit" class="btn btn-primary">Update Product</button>
+      <button type="submit" class="btn btn-primary">Create Product</button>
     </form>
   </div>
 </x-app-admin>

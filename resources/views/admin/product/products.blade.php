@@ -9,8 +9,8 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>Product Code</th>
-          <th>Product Name</th>
+          <th>Code</th>
+          <th>Name</th>
           <th>Quantity</th>
           <th>Unit</th>
           <th>Price</th>

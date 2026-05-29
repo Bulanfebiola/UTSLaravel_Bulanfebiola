@@ -9,14 +9,14 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return view('product.products', [
+        return view('admin.product.products', [
             'products' => Product::all()
         ]);
     }
 
     public function create()
     {
-        return view('product.create');
+        return view('admin.product.create');
     }
 
     public function store(Request $request)
@@ -28,13 +28,13 @@ class ProductController extends Controller
             'unit' => $request->unit,
             'price' => $request->price,
         ]);
-        return redirect()->route('products.index')->with('success', 'User created successfully.');
+        return redirect()->route('products.index')->with('success', 'Products created successfully.');
     }
 
     public function edit($id)
     {
         $product = Product::findOrFail($id);
-        return view('product.edit', compact('product'));
+        return view('admin.product.edit', compact('product'));
     }
 
     public function update(Request $request, $id)
@@ -54,6 +54,6 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
         $product->delete();
-        return  redirect()->route('products.index')->with('success', 'Product update successfully.');
+        return  redirect()->route('products.index')->with('success', 'Products update successfully.');
     }
 }

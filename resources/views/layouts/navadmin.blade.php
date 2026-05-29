@@ -15,6 +15,9 @@
         <li class="nav-item">
           <a class="nav-link" href="/products">Product</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/customers">Customer</a>
+        </li>
       </ul>
     </div>
   </div>
